@@ -45,7 +45,7 @@ class RegisterVC: UIViewController {
             /* Create new user in DB */
 
             /* URL to php file */
-            let url = URL(string: "http://localhost/AfekBook/register.php")!
+            let url = URL(string: "http://localhost/AfekBook/AfekBookBackEnd/register.php")!
             /* A request to this file */
             var request = URLRequest(url: url)
             /* Method to pass data to thos file */

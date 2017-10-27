@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a39bd3e0-f3f4-4815-8285-ce429cd02d73" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/AfekBook/ViewController.swift" afterPath="$PROJECT_DIR$/AfekBook/RegisterVC.swift" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AfekBook.xcodeproj/project.pbxproj" afterPath="$PROJECT_DIR$/AfekBook.xcodeproj/project.pbxproj" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AfekBook/Assets.xcassets/AppIcon.appiconset/Contents.json" afterPath="$PROJECT_DIR$/AfekBook/Assets.xcassets/AppIcon.appiconset/Contents.json" />
@@ -22,8 +21,8 @@
       <file leaf-file-name="RegisterVC.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AfekBook/RegisterVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="543">
-              <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+            <state relative-caret-position="744">
+              <caret line="47" column="77" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="77" />
               <folding />
             </state>
           </provider>
@@ -32,7 +31,7 @@
     </leaf>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -132,16 +131,15 @@
       <option name="presentableId" value="Default" />
       <updated>1507974002768</updated>
       <workItem from="1507974007792" duration="9114000" />
-      <workItem from="1508052458372" duration="256000" />
+      <workItem from="1508052458372" duration="1406000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9370000" />
+    <option name="totallyTimeSpent" value="10520000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15416667" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -186,8 +184,8 @@
     <entry file="file://$PROJECT_DIR$/AfekBook/ViewController.swift" />
     <entry file="file://$PROJECT_DIR$/AfekBook/RegisterVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="543">
-          <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+        <state relative-caret-position="744">
+          <caret line="47" column="77" lean-forward="true" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="77" />
           <folding />
         </state>
       </provider>
