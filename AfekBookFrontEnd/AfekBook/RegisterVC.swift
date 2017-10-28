@@ -51,33 +51,82 @@ class RegisterVC: UIViewController {
             /* Method to pass data to thos file */
             request.httpMethod = "POST"
             /* Body to be appended to url */
-            let body = "username=\(userNameTxt.text!.lowercased())&password=\(passwordTxt.text!.lowercased())&email=\(emailTxt.text!.lowercased())" +
-                    "&fullname=\(firstNameTxt.text!.lowercased())%20\(lastNameTxt.text!.lowercased())"
+            let body = "username=\(userNameTxt.text!.lowercased())&password=\(passwordTxt.text!)" +
+                    "&email=\(emailTxt.text!)&fullname=\(firstNameTxt.text!)%20\(lastNameTxt.text!)"
             /* Launch the request */
-            request.httpBody = body.data(using: String.Encoding.utf8)
-            URLSession.shared.dataTask(with: request, completionHandler: { (data: Data?, response: URLResponse?,
-                                                                         error: Error?) in
+            request.httpBody = body.data(using: .utf8)
+            URLSession.shared.dataTask(with: request) { data, response, error in
+
                 if error == nil {
-                    DispatchQueue.main.async {
+
+                    // get main queue in code process to communicate back to UI
+                    DispatchQueue.main.async(execute: {
+
                         do {
-                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+                            // get json result
+                            let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any]
+                            // assign json to new var parseJSON in guard/secured way
                             guard let parseJSON = json else {
                                 print("Error while parsing")
                                 return
                             }
+                            print(parseJSON)
+
+                            // get id from parseJSON dictionary
                             let id = parseJSON["id"]
+
+                            // successfully registered
                             if id != nil {
-                                print(parseJSON)
+
+                                // save user information we received from our host
+                                UserDefaults.standard.set(parseJSON, forKey: "parseJSON")
+//                                user = UserDefaults.standard.value(forKey: "parseJSON") as? NSDictionary
+
+                                // go to tabbar / home page
+                                DispatchQueue.main.async(execute: {
+//                                    appDelegate.login()
+                                })
+
+                                // error
+                            } else {
+
+                                // get main queue to communicate back to user
+                                DispatchQueue.main.async(execute: {
+                                    let message = parseJSON["message"] as! String
+//                                    appDelegate.infoView(message: message, color: colorSmoothRed)
+                                })
+                                return
+
                             }
 
+
                         } catch {
-                            print("Caught an error:\(error)")
+
+                            // get main queue to communicate back to user
+                            DispatchQueue.main.async(execute: {
+                                let message = "\(error)"
+//                                appDelegate.infoView(message: message, color: colorSmoothRed)
+                            })
+                            return
+
                         }
-                    }
+
+                    })
+
+                    // if unable to proceed request
                 } else {
-                    print("error: \(error)")
+
+                    // get main queue to communicate back to user
+                    DispatchQueue.main.async(execute: {
+                        let message = error!.localizedDescription
+//                        appDelegate.infoView(message: message, color: colorSmoothRed)
+                    })
+                    return
+
                 }
-            }).resume()
+
+                // launch prepared session
+            }.resume()
         }
     }
 

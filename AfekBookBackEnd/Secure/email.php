@@ -6,17 +6,16 @@
  * Date: 15/10/2017
  * Time: 13:02
  */
-
 class email
 {
 //    Generate unique token for user confirmation email
     function generateToken($length)
     {
-        $chars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
-        $charsLength = srtlen($chars);
+        $characters = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890";
+        $charactersLength = strlen($characters);
         $token = '';
-        for ($i = 0; i < $charsLength; $i++) {
-            $token .= $chars[rand(0, $charsLength - 1)];
+        for ($i = 0; $i < $length; $i++) {
+            $token .= $characters[rand(0, $charactersLength - 1)];
         }
         return $token;
     }
@@ -32,7 +31,8 @@ class email
     }
 
 //    Send email using PHP
-    function sendEmail($details) {
+    function sendEmail($details)
+    {
         $subject = $details["subject"];
         $to = $details["to"];
         $fromName = $details["fromName"];
@@ -44,6 +44,7 @@ class email
         $headers .= "From: " . $fromName . " <" . $fromEmail . ">" . "\r\n";
 
         mail($to, $subject, $body, $headers);
+        echo "MAIL SENT!!!";
 
     }
 

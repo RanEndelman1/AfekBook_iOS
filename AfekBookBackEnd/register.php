@@ -14,9 +14,31 @@ $email = htmlentities($_REQUEST["email"]);
 $fullname = htmlentities($_REQUEST["fullname"]);
 
 // if GET or POST are empty
-if (empty($username) || empty($password) || empty($email) || empty($fullname)) {
+
+if (empty($password)) {
     $returnArray["status"] = "400";
-    $returnArray["messages"] = "Missing required info";
+    $returnArray["messages"] = "Missing password";
+    echo json_encode($returnArray);
+    return;
+}
+
+if (empty($email)) {
+    $returnArray["status"] = "400";
+    $returnArray["messages"] = "Missing email";
+    echo json_encode($returnArray);
+    return;
+}
+
+if (empty($fullname)) {
+    $returnArray["status"] = "400";
+    $returnArray["messages"] = "Missing fullname";
+    echo json_encode($returnArray);
+    return;
+}
+
+if (empty($username)) {
+    $returnArray["status"] = "400";
+    $returnArray["messages"] = "Missing username";
     echo json_encode($returnArray);
     return;
 }
@@ -42,8 +64,12 @@ $access->connect();
 
 //STEP 3. Insert user info
 $result = $access->registerUser($username, $secure_password, $salt, $email, $fullname);
+//if register succeeded
 if ($result) {
+//    The current registered user info
     $user = $access->selectUser($username);
+
+//    Declare info to feedback to user as json
     $returnArray["status"] = "200";
     $returnArray["messages"] = "Successfully registered ";
     $returnArray["id"] = $user["id"];
@@ -51,15 +77,32 @@ if ($result) {
     $returnArray["email"] = $user["email"];
     $returnArray["fullname"] = $user["fullname"];
     $returnArray["ava"] = $user["ava"];
+// STEP 4. Email confirmation mail
+    require("secure/email.php");
+    $email = new email();
+    $token = $email->generateToken(20);
+    $access->saveToken("emailTokens", $user["id"], $token);
+    $details = array();
+    $details["subject"] = "Email confirmation from AfekBook";
+    $details["to"] = $user["email"];
+    $details["fromName"] = "AfekBook for iOS";
+    $details["fromEmail"] = "endelmanran@gmail.com";
+//    Access template file
+    $template = $email->confirmationTemplate();
+//    store the required token in the html file
+    $template = str_replace("{token}", $token, $template);
+
+    $details["body"] = $template;
+    $email->sendEmail($details);
 } else {
     $returnArray["status"] = "400";
     $returnArray["messages"] = "Could not register with provided info";
 }
 
-// STEP 4. Close connection
+// STEP 5. Close connection
 $access->disconnect();
 
-// STEP 5. JSON data
+// STEP 6. JSON data
 echo json_encode($returnArray);
 
 ?>
