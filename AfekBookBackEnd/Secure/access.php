@@ -45,7 +45,8 @@ class  access
     }
 
 //    Insert User details
-    public function registerUser($username, $password, $salt, $email, $fullname) {
+    public function registerUser($username, $password, $salt, $email, $fullname)
+    {
         $sql = "INSERT INTO users SET username=?, password=?, salt=?, email=?, fullname=?";
         $statement = mysqli_prepare($this->conn, $sql);
         if (!$statement) {
@@ -56,8 +57,9 @@ class  access
         return $result;
     }
 
-    public function selectUser($username) {
-        $sql = "SELECT * FROM users WHERE username='".$username."'";
+    public function selectUser($username)
+    {
+        $sql = "SELECT * FROM users WHERE username='" . $username . "'";
         $result = mysqli_query($this->conn, $sql);
 
         if ($result != null && (mysqli_num_rows($result) >= 1)) {
@@ -67,6 +69,54 @@ class  access
             }
         }
         return $returnArray;
+    }
+
+//    Function to save confirmation email message's token
+    public function saveToken($table, $id, $token)
+    {
+        $sql = "INSERT INTO $table SET id=?, token=?";
+        $statement = mysqli_prepare($this->conn, $sql);
+        if (!$statement) {
+            throw new Exception($statement->error);
+        }
+        $statement->bind_param("is", $id, $token);
+        $result = $statement->execute();
+        return $result;
+    }
+
+//    Get user's ID via token
+    public function getUserID($token) {
+        $sql = "SELECT id FROM emailTokens WHERE token = '".$token."'";
+        $result = mysqli_query($this->conn, $sql);
+        if ($result != null && mysqli_num_rows($result) >= 1) {
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+            if (!empty($row)) {
+                return $row;
+            }
+        }
+        return null;
+    }
+
+    public function emailConfirmationStatus($status, $id) {
+        $sql = "UPDATE users SET emailConfirmed=? WHERE id=?";
+        $statement = mysqli_prepare($this->conn, $sql);
+        if (!$statement) {
+            throw new Exception($statement->error);
+        }
+        $statement->bind_param("ii", $status, $id);
+        $result = $statement->execute();
+        return $result;
+    }
+
+    public function deleteToken($id) {
+        $sql = "DELETE FROM emailTokens WHERE id=?";
+        $statement = mysqli_prepare($this->conn, $sql);
+        if (!$statement) {
+            throw new Exception($statement->error);
+        }
+        $statement->bind_param("i", $id);
+        $result = $statement->execute();
+        return $result;
     }
 }
 
