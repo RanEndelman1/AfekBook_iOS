@@ -28,11 +28,12 @@ class  access
 //        Establish connection and store it in $conn
     public function connect()
     {
-        $this->conn = new mysqli($this->host, $this->user, $this->pass, $this->name);
+        $this->conn = new mysqli($this->host, $this->user, '', $this->name);
 
         if (mysqli_connect_errno()) {
             echo 'Could not connect to DB';
         }
+      
 //        Set the connection to support all languages
         $this->conn->set_charset("utf8");
     }
@@ -118,6 +119,35 @@ class  access
         $result = $statement->execute();
         return $result;
     }
+
+    public function getUser($username) {
+
+        // declare array to store all information we got
+        $returnArray = array();
+
+        // sql statement
+        $sql = "SELECT * FROM users WHERE username='".$username."'";
+
+        // execute / query $sql
+        $result = $this->conn->query($sql);
+
+        // if we got some result
+        if ($result != null && (mysqli_num_rows($result) >= 1)) {
+
+            // assign result to $row as assoc array
+            $row = $result->fetch_array(MYSQLI_ASSOC);
+
+            // if assigned to $row. Assign everything $returnArray
+            if (!empty($row)) {
+                $returnArray = $row;
+            }
+        }
+
+        return $returnArray;
+
+    }
+
+
 }
 
 

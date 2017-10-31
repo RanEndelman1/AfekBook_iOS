@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		030DFC481FA8818100109F79 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DFC471FA8818100109F79 /* LoginVC.swift */; };
 		61820B4708EE69EA4C3B5EED /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61820DEAC8D9515057564681 /* background.jpg */; };
 		90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A894C71F9211F700C74B10 /* AppDelegate.swift */; };
 		90A894CA1F9211F700C74B10 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A894C91F9211F700C74B10 /* RegisterVC.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030DFC471FA8818100109F79 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		61820DEAC8D9515057564681 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		90A894C41F9211F700C74B10 /* AfekBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfekBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A894C71F9211F700C74B10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +68,7 @@
 			children = (
 				90A894C71F9211F700C74B10 /* AppDelegate.swift */,
 				90A894C91F9211F700C74B10 /* RegisterVC.swift */,
+				030DFC471FA8818100109F79 /* LoginVC.swift */,
 				90A894CB1F9211F700C74B10 /* Main.storyboard */,
 				90A894CE1F9211F700C74B10 /* Assets.xcassets */,
 				90A894D01F9211F700C74B10 /* LaunchScreen.storyboard */,
@@ -150,6 +153,7 @@
 			files = (
 				90A894CA1F9211F700C74B10 /* RegisterVC.swift in Sources */,
 				90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */,
+				030DFC481FA8818100109F79 /* LoginVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +291,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7B7BXV74H9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AfekBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -303,7 +307,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7B7BXV74H9;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = AfekBook/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
