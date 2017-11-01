@@ -17,7 +17,7 @@ class  access
     var $conn = null;
     var $result = null;
 
-    function __construct($dbhost, $dbuser, $dbname, $dbpass)
+    function __construct($dbhost, $dbuser, $dbpass, $dbname)
     {
         $this->host = $dbhost;
         $this->user = $dbuser;
@@ -28,12 +28,13 @@ class  access
 //        Establish connection and store it in $conn
     public function connect()
     {
-        $this->conn = new mysqli($this->host, $this->user, '', $this->name);
+
+        $this->conn = mysqli_connect($this->host,$this->user,$this->pass,$this->name); 
 
         if (mysqli_connect_errno()) {
             echo 'Could not connect to DB';
         }
-      
+       
 //        Set the connection to support all languages
         $this->conn->set_charset("utf8");
     }
@@ -124,12 +125,19 @@ class  access
 
         // declare array to store all information we got
         $returnArray = array();
+      
 
         // sql statement
         $sql = "SELECT * FROM users WHERE username='".$username."'";
 
+      
+        echo $sql;
+        echo "<br>";
+
         // execute / query $sql
-        $result = $this->conn->query($sql);
+        $result = mysqli_query($this->conn,"SELECT * FROM users WHERE username='$username'");
+
+
 
         // if we got some result
         if ($result != null && (mysqli_num_rows($result) >= 1)) {
@@ -142,6 +150,7 @@ class  access
                 $returnArray = $row;
             }
         }
+        else
 
         return $returnArray;
 
