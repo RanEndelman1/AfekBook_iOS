@@ -30,14 +30,6 @@ class  access
     {
 
         $this->conn = mysqli_connect($this->host, $this->user, $this->pass, $this->name);
-        echo 'host = '.$this->host;
-        echo "<br>";
-        echo 'user = '.$this->user;
-        echo "<br>";
-        echo 'pass = '.$this->pass;
-        echo "<br>";
-        echo 'name = '.$this->name;
-        echo "<br>";
         if (mysqli_connect_errno()) {
             echo 'Could not connect to DB';
         }

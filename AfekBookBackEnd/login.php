@@ -1,16 +1,17 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: macbookpro
- * Date: 06.06.16
- * Time: 21:57
+ * User: RanEndelman
+ * Date: 17/10/2017
+ * Time: 12:00
  */
-
 
 
 // STEP 1. Declare variables to store user information
 // array will store all informaiton
-if ( empty($_REQUEST["username"]) || empty($_REQUEST["password"])) {
+header("Access-Control-Allow-Origin: *");
+
+if (empty($_REQUEST["username"]) || empty($_REQUEST["password"])) {
 
     $returnArray["status"] = "400";
     $returnArray["message"] = "Missing required information";
@@ -23,10 +24,9 @@ $username = htmlentities($_REQUEST["username"]);
 $password = htmlentities($_REQUEST["password"]);
 
 
-
 // STEP 2. Build Connection
 // Secure way to store Connection Infromation
-$file = parse_ini_file("AfekBook.ini");   // accessing the file with connection infromation
+$file = parse_ini_file("../../../AfekBook.ini");   // accessing the file with connection infromation
 
 // retrieve data from file
 $host = trim($file["dbhost"]);
@@ -34,27 +34,23 @@ $user = trim($file["dbuser"]);
 $pass = trim($file["dbpass"]);
 $name = trim($file["dbname"]);
 
-// include MySQLDAO.php for connection and interacting with db
+// include access.php for connection and interacting with db
 require("secure/access.php");
 
-// running MySQLDAO Class with constructed variables
+// running access Class with constructed variables
 $access = new access($host, $user, $pass, $name);
-$access->connect();   // launch opend connection function
-
+$access->connect();
 
 
 // STEP 3. Get user
 $user = $access->getUser($username);
 
 if (empty($user)) {
-
     $returnArray["status"] = "403";
     $returnArray["message"] = "User is not found";
     echo json_encode($returnArray);
     return;
-
 }
-
 
 
 // STEP 4. Check validity of entered user information and information from database
@@ -65,7 +61,6 @@ $salt = $user["salt"];
 
 // 4.2 Check if entered passwords match with password from database
 if ($secure_password == sha1($password . $salt)) {
-
     $returnArray["status"] = "200";
     $returnArray["message"] = "Logged in successfully";
     $returnArray["id"] = $user["id"];
@@ -90,11 +85,8 @@ if ($secure_password == sha1($password . $salt)) {
 $access->disconnect();
 
 
-
 // STEP 6. JSON data
 echo json_encode($returnArray);
-
-
 
 
 ?>

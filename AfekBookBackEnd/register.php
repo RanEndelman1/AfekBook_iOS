@@ -12,14 +12,6 @@ $username = htmlentities($_REQUEST["username"]);
 $password = htmlentities($_REQUEST["password"]);
 $email = htmlentities($_REQUEST["email"]);
 $fullname = htmlentities($_REQUEST["fullname"]);
-echo '$username = '.$username;
-echo "<br>";
-echo '$password = '.$password;
-echo "<br>";
-echo '$email = '.$email;
-echo "<br>";
-echo '$fullname = '.$fullname;
-echo "<br>";
 
 // if GET or POST are empty
 

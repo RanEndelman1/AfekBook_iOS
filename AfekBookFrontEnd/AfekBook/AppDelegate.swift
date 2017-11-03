@@ -8,6 +8,21 @@
 
 import UIKit
 
+// global variable refered to appDelegate to be able to call it from any class / file.swift
+let appDelegate : AppDelegate = UIApplication.shared.delegate as! AppDelegate
+
+// colors
+let colorSmoothRed = UIColor(red: 255/255, green: 50/255, blue: 75/255, alpha: 1)
+let colorLightGreen = UIColor(red: 30/255, green: 244/255, blue: 125/255, alpha: 1)
+let colorSmoothGray = UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
+let colorBrandBlue = UIColor(red: 45 / 255, green: 213 / 255, blue: 255 / 255, alpha: 1)
+
+// sizes
+let fontSize12 = UIScreen.main.bounds.width / 31
+
+// stores all information about current user
+var user : NSDictionary?
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -17,6 +32,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         return true
+    }
+    
+//    Function to pass to home page or top bar
+    func login() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let tabBar = storyboard.instantiateViewController(withIdentifier: "tabBar")
+        window?.rootViewController = tabBar
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
