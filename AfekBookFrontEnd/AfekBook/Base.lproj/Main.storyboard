@@ -244,11 +244,11 @@
             </objects>
             <point key="canvasLocation" x="-533.33333333333337" y="14.673913043478262"/>
         </scene>
-        <!--Item 1-->
+        <!--Home-->
         <scene sceneID="wgQ-eR-BO3">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AIk-D6-0N1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item 1" id="j2S-z3-teF"/>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="AIk-D6-0N1" customClass="NavVC" customModule="AfekBook" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="rsz_1human.png" id="j2S-z3-teF"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="7ah-5x-nyz">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
@@ -264,4 +264,7 @@
             <point key="canvasLocation" x="235" y="811"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="rsz_1human.png" width="32" height="32"/>
+    </resources>
 </document>

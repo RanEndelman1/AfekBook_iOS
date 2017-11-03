@@ -122,9 +122,7 @@ class LoginVC: UIViewController {
         }
     }
 
-    /*  override func touchesBegan(touches: Set<UITouch>, with event: UIEvent?) {
-          self.view.endEditing(false)
-          <#code#>
-      }*/
-
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return UIStatusBarStyle.lightContent
+    }
 }

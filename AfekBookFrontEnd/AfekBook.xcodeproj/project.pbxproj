@@ -14,6 +14,8 @@
 		90A894CD1F9211F700C74B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A894CB1F9211F700C74B10 /* Main.storyboard */; };
 		90A894CF1F9211F700C74B10 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 90A894CE1F9211F700C74B10 /* Assets.xcassets */; };
 		90A894D21F9211F700C74B10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A894D01F9211F700C74B10 /* LaunchScreen.storyboard */; };
+		90F404CD1FAD2F7B008ACF2A /* rsz_1human.png in Resources */ = {isa = PBXBuildFile; fileRef = 90F404CC1FAD2F7B008ACF2A /* rsz_1human.png */; };
+		90F404D11FAD31F8008ACF2A /* NavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F404D01FAD31F8008ACF2A /* NavVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		90A894CE1F9211F700C74B10 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		90A894D11F9211F700C74B10 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		90A894D31F9211F700C74B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90F404CC1FAD2F7B008ACF2A /* rsz_1human.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rsz_1human.png; sourceTree = "<group>"; };
+		90F404D01FAD31F8008ACF2A /* NavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +46,7 @@
 		618200936E7EFBDE05B48F73 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				90F404CC1FAD2F7B008ACF2A /* rsz_1human.png */,
 				61820DEAC8D9515057564681 /* background.jpg */,
 			);
 			path = Images;
@@ -73,6 +78,7 @@
 				90A894CE1F9211F700C74B10 /* Assets.xcassets */,
 				90A894D01F9211F700C74B10 /* LaunchScreen.storyboard */,
 				90A894D31F9211F700C74B10 /* Info.plist */,
+				90F404D01FAD31F8008ACF2A /* NavVC.swift */,
 				618200936E7EFBDE05B48F73 /* Images */,
 			);
 			path = AfekBook;
@@ -140,6 +146,7 @@
 				90A894D21F9211F700C74B10 /* LaunchScreen.storyboard in Resources */,
 				90A894CF1F9211F700C74B10 /* Assets.xcassets in Resources */,
 				90A894CD1F9211F700C74B10 /* Main.storyboard in Resources */,
+				90F404CD1FAD2F7B008ACF2A /* rsz_1human.png in Resources */,
 				61820B4708EE69EA4C3B5EED /* background.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -151,6 +158,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				90F404D11FAD31F8008ACF2A /* NavVC.swift in Sources */,
 				90A894CA1F9211F700C74B10 /* RegisterVC.swift in Sources */,
 				90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */,
 				030DFC481FA8818100109F79 /* LoginVC.swift in Sources */,
