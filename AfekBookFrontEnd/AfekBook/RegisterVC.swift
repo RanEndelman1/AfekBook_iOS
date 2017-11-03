@@ -78,13 +78,14 @@ class RegisterVC: UIViewController {
                             // successfully registered
                             if id != nil {
 
-                                // save user information we received from our host
-                                UserDefaults.standard.set(parseJSON, forKey: "parseJSON")
-//                                user = UserDefaults.standard.value(forKey: "parseJSON") as? NSDictionary
+//                                Save user info
+                                UserDefaults.standard.setValue(parseJSON, forKey: "parseJSON")
+                                user = UserDefaults.standard.value(forKey: "parseJSON") as? NSDictionary
 
-                                // go to tabbar / home page
                                 DispatchQueue.main.async(execute: {
-//                                    appDelegate.login()
+//                                    Go to home page
+                                    appDelegate.login()
+
                                 })
 
                                 // error
