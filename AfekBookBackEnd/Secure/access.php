@@ -29,12 +29,19 @@ class  access
     public function connect()
     {
 
-        $this->conn = mysqli_connect($this->host,$this->user,$this->pass,$this->name); 
-
+        $this->conn = mysqli_connect($this->host, $this->user, $this->pass, $this->name);
+        echo 'host = '.$this->host;
+        echo "<br>";
+        echo 'user = '.$this->user;
+        echo "<br>";
+        echo 'pass = '.$this->pass;
+        echo "<br>";
+        echo 'name = '.$this->name;
+        echo "<br>";
         if (mysqli_connect_errno()) {
             echo 'Could not connect to DB';
         }
-       
+
 //        Set the connection to support all languages
         $this->conn->set_charset("utf8");
     }
@@ -87,8 +94,9 @@ class  access
     }
 
 //    Get user's ID via token
-    public function getUserID($token) {
-        $sql = "SELECT id FROM emailTokens WHERE token = '".$token."'";
+    public function getUserID($token)
+    {
+        $sql = "SELECT id FROM emailTokens WHERE token = '" . $token . "'";
         $result = mysqli_query($this->conn, $sql);
         if ($result != null && mysqli_num_rows($result) >= 1) {
             $row = $result->fetch_array(MYSQLI_ASSOC);
@@ -99,7 +107,8 @@ class  access
         return null;
     }
 
-    public function emailConfirmationStatus($status, $id) {
+    public function emailConfirmationStatus($status, $id)
+    {
         $sql = "UPDATE users SET emailConfirmed=? WHERE id=?";
         $statement = mysqli_prepare($this->conn, $sql);
         if (!$statement) {
@@ -110,7 +119,8 @@ class  access
         return $result;
     }
 
-    public function deleteToken($id) {
+    public function deleteToken($id)
+    {
         $sql = "DELETE FROM emailTokens WHERE id=?";
         $statement = mysqli_prepare($this->conn, $sql);
         if (!$statement) {
@@ -121,22 +131,16 @@ class  access
         return $result;
     }
 
-    public function getUser($username) {
+    public function getUser($username)
+    {
 
         // declare array to store all information we got
         $returnArray = array();
-      
+
 
         // sql statement
-        $sql = "SELECT * FROM users WHERE username='".$username."'";
-
-      
-        echo $sql;
-        echo "<br>";
-
-        // execute / query $sql
-        $result = mysqli_query($this->conn,"SELECT * FROM users WHERE username='$username'");
-
+        $sql = "SELECT * FROM users WHERE username='" . $username . "'";
+        $result = mysqli_query($this->conn, $sql);
 
 
         // if we got some result
@@ -147,12 +151,11 @@ class  access
 
             // if assigned to $row. Assign everything $returnArray
             if (!empty($row)) {
-                $returnArray = $row;
+                return $row;
             }
-        }
-        else
+        } else
 
-        return $returnArray;
+            return $returnArray;
 
     }
 

@@ -24,7 +24,7 @@ $name = trim($file["dbname"]);
 
 // include access.php to use it's functions
 require("../secure/access.php");
-$access = new access($host, $user, $name, $pass);
+$access = new access($host, $user, $pass, $name);
 $access->connect();
 
 // STEP 3. Get user's ID
