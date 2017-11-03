@@ -7,7 +7,7 @@
  */
 
 
-    
+
 // STEP 1. Declare variables to store user information
 // array will store all informaiton
 if ( empty($_REQUEST["username"]) || empty($_REQUEST["password"])) {
