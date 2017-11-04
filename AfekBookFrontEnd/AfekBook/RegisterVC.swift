@@ -94,7 +94,7 @@ class RegisterVC: UIViewController {
                                 // get main queue to communicate back to user
                                 DispatchQueue.main.async(execute: {
                                     let message = parseJSON["message"] as! String
-//                                    appDelegate.infoView(message: message, color: colorSmoothRed)
+                                    appDelegate.infoView(message: message, color: colorSmoothRed)
                                 })
                                 return
 
@@ -106,7 +106,7 @@ class RegisterVC: UIViewController {
                             // get main queue to communicate back to user
                             DispatchQueue.main.async(execute: {
                                 let message = "\(error)"
-//                                appDelegate.infoView(message: message, color: colorSmoothRed)
+                                appDelegate.infoView(message: message, color: colorSmoothRed)
                             })
                             return
 
@@ -120,7 +120,7 @@ class RegisterVC: UIViewController {
                     // get main queue to communicate back to user
                     DispatchQueue.main.async(execute: {
                         let message = error!.localizedDescription
-//                        appDelegate.infoView(message: message, color: colorSmoothRed)
+                        appDelegate.infoView(message: message, color: colorSmoothRed)
                     })
                     return
 

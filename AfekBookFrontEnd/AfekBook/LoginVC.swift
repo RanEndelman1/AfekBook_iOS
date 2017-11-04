@@ -89,7 +89,7 @@ class LoginVC: UIViewController {
                             // get main queue to communicate back to user
                             DispatchQueue.main.async(execute: {
                                 let message = parseJSON["message"] as! String
-//                                appDelegate.infoView(message: message, color: colorSmoothRed)
+                                appDelegate.infoView(message: message, color: colorSmoothRed)
                             })
                             return
 
@@ -101,7 +101,7 @@ class LoginVC: UIViewController {
                         DispatchQueue.main.async(execute: {
                             let message = "\(error)"
                             print(error)
-//                            appDelegate.infoView(message: message, color: colorSmoothRed)
+                            appDelegate.infoView(message: message, color: colorSmoothRed)
                         })
                         return
 
@@ -112,7 +112,7 @@ class LoginVC: UIViewController {
                     // get main queue to communicate back to user
                     DispatchQueue.main.async(execute: {
                         let message = error!.localizedDescription
-//                        appDelegate.infoView(message: message, color: colorSmoothRed)
+                        appDelegate.infoView(message: message, color: colorSmoothRed)
                     })
                     return
 
