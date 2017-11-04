@@ -151,6 +151,18 @@ class  access
 
     }
 
+//    Insert post to DB
+public function insertPost($id, $uuid, $text, $path) {
+    $sql = "INSERT INTO posts SET id=?, uuid=?, text=?, path=?";
+    $statement = mysqli_prepare($this->conn, $sql);
+    if (!$statement) {
+        throw new Exception($statement->error);
+    }
+    $statement->bind_param("isss", $id, $uuid, $text, $path);
+    $result = $statement->execute();
+    return $result;
+}
+
 
 }
 

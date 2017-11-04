@@ -46,8 +46,8 @@ class HomeVC: UIViewController {
         UserDefaults.standard.synchronize()
         
         // go to login page
-        let loginvc = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.present(loginvc, animated: true, completion: nil)
+        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
+        self.present(loginVC, animated: true, completion: nil)
     }
     
 }

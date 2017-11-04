@@ -45,7 +45,7 @@ class LoginVC: UIViewController {
 
             // send request to mysql db
             // url to access our php file
-            let url = URL(string: "http://localhost/afekbook_ios/afekbookbackend/login.php")!
+            let url = URL(string: "http://localhost/AfekBook/AfekBookBackEnd/login.php")!
 
             // request url
             var request = URLRequest(url: url)
