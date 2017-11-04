@@ -26,7 +26,7 @@ $password = htmlentities($_REQUEST["password"]);
 
 // STEP 2. Build Connection
 // Secure way to store Connection Infromation
-$file = parse_ini_file("../../../AfekBook.ini");   // accessing the file with connection infromation
+$file = parse_ini_file("AfekBook.ini");   // accessing the file with connection infromation
 
 // retrieve data from file
 $host = trim($file["dbhost"]);

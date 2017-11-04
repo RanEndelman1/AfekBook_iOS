@@ -130,6 +130,15 @@ class RegisterVC: UIViewController {
             }.resume()
         }
     }
+    
+    
+    // touched screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // hide keyboard
+        self.view.endEditing(false)
+    }
+    
 
     @IBAction func alreadyHaveAccountButton(_ sender: Any) {
     }
