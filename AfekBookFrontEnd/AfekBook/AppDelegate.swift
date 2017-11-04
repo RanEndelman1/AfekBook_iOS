@@ -28,6 +28,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    // boolean to check is erroView is currently showing or not
+    var infoViewIsShowing = false
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -70,6 +72,78 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    }
+
+    func infoView(message:String, color:UIColor) {
+
+        // if infoView is not showing ...
+        if infoViewIsShowing == false {
+
+            // cast as infoView is currently showing
+            infoViewIsShowing = true
+
+
+            // infoView - red background
+            let infoView_Height = self.window!.bounds.height / 14.2
+            let infoView_Y = 0 - infoView_Height
+
+            let infoView = UIView(frame: CGRect(x: 0, y: infoView_Y, width: self.window!.bounds.width, height: infoView_Height))
+            infoView.backgroundColor = color
+            self.window!.addSubview(infoView)
+
+
+            // infoView - label to show info text
+            let infoLabel_Width = infoView.bounds.width
+            let infoLabel_Height = infoView.bounds.height + UIApplication.shared.statusBarFrame.height / 2
+
+            let infoLabel = UILabel()
+            infoLabel.frame.size.width = infoLabel_Width
+            infoLabel.frame.size.height = infoLabel_Height
+            infoLabel.numberOfLines = 0
+
+            infoLabel.text = message
+            infoLabel.font = UIFont(name: "HelveticaNeue", size: fontSize12)
+            infoLabel.textColor = .white
+            infoLabel.textAlignment = .center
+
+            infoView.addSubview(infoLabel)
+
+
+            // animate info view
+            UIView.animate(withDuration: 0.2, animations: {
+
+                // move down infoView
+                infoView.frame.origin.y = 0
+
+                // if animation did finish
+            }, completion: { (finished:Bool) in
+
+                // if it is true
+                if finished {
+
+                    UIView.animate(withDuration: 0.1, delay: 3, options: .curveLinear, animations: {
+
+                        // move up infoView
+                        infoView.frame.origin.y = infoView_Y
+
+                        // if finished all animations
+                    }, completion: { (finished:Bool) in
+
+                        if finished {
+                            infoView.removeFromSuperview()
+                            infoLabel.removeFromSuperview()
+                            self.infoViewIsShowing = false
+                        }
+
+                    })
+
+                }
+
+            })
+
+
+        }
+
     }
 
 

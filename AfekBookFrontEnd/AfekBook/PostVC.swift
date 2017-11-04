@@ -117,6 +117,7 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
 
             // call func to uplaod post
             uploadPost()
+            print("post uploaded")
 
         }
     }
@@ -169,7 +170,7 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
         let boundary = "Boundary-\(NSUUID().uuidString)"
         request.setValue("multipart/form-data; boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
         var imageData = Data()
-        if pictureImg != nil {
+        if pictureImg.image != nil {
             imageData = UIImageJPEGRepresentation(pictureImg.image!, 0.5)!
         }
 
@@ -184,13 +185,26 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
                         return
                     }
                     print(parseJSON)
+
+                    let message = parseJSON["message"] as? String
+                    if message != nil {
+                        DispatchQueue.main.async(execute: {
+                            print("Successfully posted!")
+                            self.textTxt.text = ""
+                            self.pictureImg.image = UIImage()
+                            self.postBtn.alpha = 0.4
+                            self.postBtn.isEnabled = false
+                            self.tabBarController?.selectedIndex = 0
+                        })
+                    }
                 } catch {
 
                     // get main queue to communicate back to user
                     DispatchQueue.main.async(execute: {
                         let message = "\(error)"
                         print(error)
-//                            appDelegate.infoView(message: message, color: colorSmoothRed)
+                        appDelegate.infoView(message: message, color: colorSmoothRed)
+
                     })
                     return
 
@@ -201,17 +215,11 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
                 // get main queue to communicate back to user
                 DispatchQueue.main.async(execute: {
                     let message = error!.localizedDescription
-//                        appDelegate.infoView(message: message, color: colorSmoothRed)
+                        appDelegate.infoView(message: message, color: colorSmoothRed)
                 })
                 return
 
             }
-
-
         }.resume()
-
-
     }
-
-
 }

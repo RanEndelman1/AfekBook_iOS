@@ -31,9 +31,7 @@ if (!empty($_REQUEST["uuid"]) && !empty($_REQUEST["text"])) {
 
 //    Create folder in the server to store post's pics
     $folder = "/Application/XAMPP/xamppfiles/htdocs/AfekBook/AfekBookBackEnd/posts/" . $id;
-    if (!file_exists($folder)) {
-        mkdir($folder, 0777, true);
-    }
+    echo file_exists($folder);
     $folder = $folder . "/" . basename($_FILES["file"]["name"]);
     if (move_uploaded_file($_FILES["file"]["tmp_name"], $folder)) {
         $returnArray["message"] = "Post has been made with picture";
@@ -44,7 +42,7 @@ if (!empty($_REQUEST["uuid"]) && !empty($_REQUEST["text"])) {
     }
 
 //  Save the post info in DB
-    $access->insertPost($id, uuid, $text, $path);
+    $access->insertPost($id, $uuid, $text, $path);
 
 }
 
