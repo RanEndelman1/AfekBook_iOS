@@ -45,7 +45,7 @@ class LoginVC: UIViewController {
 
             // send request to mysql db
             // url to access our php file
-            let url = URL(string: "http://localhost/AfekBook/AfekBookBackEnd/login.php")!
+            let url = URL(string: "http://localhost/afekbook_ios/afekbookbackend/login.php")!
 
             // request url
             var request = URLRequest(url: url)
@@ -121,7 +121,13 @@ class LoginVC: UIViewController {
             }.resume()
         }
     }
-
+    
+    // touched screen
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        // hide keyboard
+        self.view.endEditing(false)
+    }
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return UIStatusBarStyle.lightContent
     }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		030DFC481FA8818100109F79 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030DFC471FA8818100109F79 /* LoginVC.swift */; };
+		036BE0251FAD3EE400175F85 /* TabBarVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 036BE0241FAD3EE400175F85 /* TabBarVC.swift */; };
+		038FB5C11FAD59B600634701 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB5C01FAD59B600634701 /* HomeVC.swift */; };
+		038FB5C91FAD6EFF00634701 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB5C81FAD6EFF00634701 /* PostVC.swift */; };
 		61820B4708EE69EA4C3B5EED /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61820DEAC8D9515057564681 /* background.jpg */; };
 		90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A894C71F9211F700C74B10 /* AppDelegate.swift */; };
 		90A894CA1F9211F700C74B10 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A894C91F9211F700C74B10 /* RegisterVC.swift */; };
@@ -20,6 +23,13 @@
 
 /* Begin PBXFileReference section */
 		030DFC471FA8818100109F79 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		036BE0241FAD3EE400175F85 /* TabBarVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarVC.swift; sourceTree = "<group>"; };
+		038FB5C01FAD59B600634701 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
+		038FB5C21FAD5E5200634701 /* logout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = logout.png; sourceTree = "<group>"; };
+		038FB5C31FAD610700634701 /* post.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = post.png; sourceTree = "<group>"; };
+		038FB5C41FAD615600634701 /* post@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post@3x.png"; sourceTree = "<group>"; };
+		038FB5C51FAD615600634701 /* post@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post@2x.png"; sourceTree = "<group>"; };
+		038FB5C81FAD6EFF00634701 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		61820DEAC8D9515057564681 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
 		90A894C41F9211F700C74B10 /* AfekBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfekBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A894C71F9211F700C74B10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,6 +56,10 @@
 		618200936E7EFBDE05B48F73 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				038FB5C51FAD615600634701 /* post@2x.png */,
+				038FB5C41FAD615600634701 /* post@3x.png */,
+				038FB5C31FAD610700634701 /* post.png */,
+				038FB5C21FAD5E5200634701 /* logout.png */,
 				90F404CC1FAD2F7B008ACF2A /* rsz_1human.png */,
 				61820DEAC8D9515057564681 /* background.jpg */,
 			);
@@ -79,6 +93,9 @@
 				90A894D01F9211F700C74B10 /* LaunchScreen.storyboard */,
 				90A894D31F9211F700C74B10 /* Info.plist */,
 				90F404D01FAD31F8008ACF2A /* NavVC.swift */,
+				036BE0241FAD3EE400175F85 /* TabBarVC.swift */,
+				038FB5C01FAD59B600634701 /* HomeVC.swift */,
+				038FB5C81FAD6EFF00634701 /* PostVC.swift */,
 				618200936E7EFBDE05B48F73 /* Images */,
 			);
 			path = AfekBook;
@@ -160,6 +177,9 @@
 			files = (
 				90F404D11FAD31F8008ACF2A /* NavVC.swift in Sources */,
 				90A894CA1F9211F700C74B10 /* RegisterVC.swift in Sources */,
+				036BE0251FAD3EE400175F85 /* TabBarVC.swift in Sources */,
+				038FB5C11FAD59B600634701 /* HomeVC.swift in Sources */,
+				038FB5C91FAD6EFF00634701 /* PostVC.swift in Sources */,
 				90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */,
 				030DFC481FA8818100109F79 /* LoginVC.swift in Sources */,
 			);
