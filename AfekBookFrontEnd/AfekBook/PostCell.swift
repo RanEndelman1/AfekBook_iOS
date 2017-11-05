@@ -13,6 +13,7 @@ class PostCell: UITableViewCell {
     @IBOutlet var textLbl: UILabel!
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var pictureImg: UIImageView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
 

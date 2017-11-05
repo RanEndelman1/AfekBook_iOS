@@ -83,6 +83,13 @@
                                     <segue destination="rC9-5L-F1b" kind="show" animates="NO" id="cUm-TY-KWX"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOz-0g-hQO">
+                                <rect key="frame" x="0.0" y="409" width="414" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" red="0.97828638633031739" green="1" blue="0.99282467752535608" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -111,6 +118,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="confirmationLbl" destination="mOz-0g-hQO" id="Q0C-A4-R06"/>
                         <outlet property="emailTxt" destination="etl-ya-P2H" id="a8X-7e-7GF"/>
                         <outlet property="firstNameTxt" destination="JMg-1J-Zy0" id="bjc-e7-RMX"/>
                         <outlet property="lastNameTxt" destination="F2Y-n9-6Rj" id="oV9-ha-6Rg"/>
@@ -120,7 +128,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="143" y="15"/>
+            <point key="canvasLocation" x="140.57971014492756" y="14.673913043478262"/>
         </scene>
         <!--HomeVC-->
         <scene sceneID="TR3-fX-Bsb">
@@ -456,6 +464,13 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wrong User Name or Password, Try again." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLh-yx-WYo">
+                                <rect key="frame" x="20" y="318" width="374" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="0.049691020333036517" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -480,6 +495,7 @@
                         <viewLayoutGuide key="safeArea" id="Edh-qC-Olp"/>
                     </view>
                     <connections>
+                        <outlet property="feedbackLbl" destination="FLh-yx-WYo" id="kEr-5D-EO0"/>
                         <outlet property="passwordTxt" destination="tw4-3f-hNW" id="b8V-JR-Wx7"/>
                         <outlet property="usernameTxt" destination="tYX-hA-ip3" id="fW1-DH-64v"/>
                     </connections>
