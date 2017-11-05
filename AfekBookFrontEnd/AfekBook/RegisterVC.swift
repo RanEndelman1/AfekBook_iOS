@@ -20,7 +20,8 @@ class RegisterVC: UIViewController {
 
     @IBOutlet var lastNameTxt: UITextField!
 
-
+    @IBOutlet var confirmationLbl: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -28,6 +29,7 @@ class RegisterVC: UIViewController {
         backgroundImage.image = UIImage(named: "background.jpg")
         backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        confirmationLbl.text = ""
     }
 
     @IBAction func registerButton(_ sender: Any) {
@@ -61,7 +63,7 @@ class RegisterVC: UIViewController {
 
                     // get main queue in code process to communicate back to UI
                     DispatchQueue.main.async(execute: {
-
+                        self.confirmationLbl.text = "Confirmation mail has been sent."
                         do {
                             // get json result
                             let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? [String: Any]
@@ -83,7 +85,6 @@ class RegisterVC: UIViewController {
                                 user = UserDefaults.standard.value(forKey: "parseJSON") as? NSDictionary
 
                                 DispatchQueue.main.async(execute: {
-//                                    Go to home page
                                     appDelegate.login()
 
                                 })
@@ -106,6 +107,7 @@ class RegisterVC: UIViewController {
                             // get main queue to communicate back to user
                             DispatchQueue.main.async(execute: {
                                 let message = "\(error)"
+                                print(message)
                                 appDelegate.infoView(message: message, color: colorSmoothRed)
                             })
                             return

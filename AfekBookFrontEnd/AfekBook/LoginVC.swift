@@ -13,6 +13,7 @@ class LoginVC: UIViewController {
 
     @IBOutlet var usernameTxt: UITextField!
 
+    @IBOutlet var feedbackLbl: UILabel!
     @IBOutlet var passwordTxt: UITextField!
 
     //First func
@@ -22,6 +23,7 @@ class LoginVC: UIViewController {
         backgroundImage.image = UIImage(named: "background.jpg")
         backgroundImage.contentMode = UIViewContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
+        feedbackLbl.text = ""
 
     }
 
@@ -89,7 +91,8 @@ class LoginVC: UIViewController {
                             // get main queue to communicate back to user
                             DispatchQueue.main.async(execute: {
                                 let message = parseJSON["message"] as! String
-                                appDelegate.infoView(message: message, color: colorSmoothRed)
+//                                appDelegate.infoView(message: message, color: colorSmoothRed)
+                                self.feedbackLbl.text = "Wrong User Name or Password, Try again."
                             })
                             return
 
@@ -101,7 +104,8 @@ class LoginVC: UIViewController {
                         DispatchQueue.main.async(execute: {
                             let message = "\(error)"
                             print(error)
-                            appDelegate.infoView(message: message, color: colorSmoothRed)
+//                            appDelegate.infoView(message: message, color: colorSmoothRed)
+                            self.feedbackLbl.text = "Wrong User Name or Password, Try again."
                         })
                         return
 
