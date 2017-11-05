@@ -44,12 +44,57 @@ if (!empty($_REQUEST["uuid"]) && !empty($_REQUEST["text"])) {
 //  Save the post info in DB
     $access->insertPost($id, $uuid, $text, $path);
 // If data not passed -> show posts
+} else if (!empty($_REQUEST["uuid"]) && empty($_REQUEST["id"])) {
+
+
+    // STEP 2.1 Get uuid of post and path to post picture passed to this php file via swift POST
+    $uuid = htmlentities($_REQUEST["uuid"]);
+    $path = htmlentities($_REQUEST["path"]);
+
+    // STEP 2.2 Delete post according to uuid
+    $result = $access->deletePost($uuid);
+
+    if (!empty($result)) {
+        $returnArray["message"] = "Successfully deleted";
+        $returnArray["result"] = $result;
+
+
+        // STEP 2.3 Delete file according to its path and if it exists
+        if (!empty($path)) {
+            $path = str_replace("http://localhost/", "/Applications/XAMPP/xamppfiles/htdocs/", $path);
+
+            // file deleted successfully
+            if (unlink($path)) {
+                $returnArray["status"] = "1000";
+                // could not delete file
+            } else {
+                $returnArray["status"] = "400";
+            }
+        }
+
+
+    } else {
+        $returnArray["message"] = "Could not delete post";
+    }
+
+
+// if data are not passed - show posts except id of the user
 } else {
+
+
+    // STEP 2.1 Pass POST / GET via html encryp and assign passed id of user to $id var
     $id = htmlentities($_REQUEST["id"]);
+
+
+    // STEP 2.2 Select posts + user related to $id
     $posts = $access->selectPosts($id);
+
+    // STEP 2.3 If posts are found, append them to $returnArray
     if (!empty($posts)) {
         $returnArray["posts"] = $posts;
     }
+
+
 }
 
 // STEP 3. Close connection
