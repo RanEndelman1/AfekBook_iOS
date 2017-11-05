@@ -192,6 +192,7 @@ class PostVC: UIViewController, UITextViewDelegate, UIImagePickerControllerDeleg
                             print("Successfully posted!")
                             self.textTxt.text = ""
                             self.pictureImg.image = UIImage()
+                            self.countLbl.text = "140"
                             self.postBtn.alpha = 0.4
                             self.postBtn.isEnabled = false
                             self.tabBarController?.selectedIndex = 0

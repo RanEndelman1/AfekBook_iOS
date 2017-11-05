@@ -43,13 +43,19 @@ if (!empty($_REQUEST["uuid"]) && !empty($_REQUEST["text"])) {
 
 //  Save the post info in DB
     $access->insertPost($id, $uuid, $text, $path);
-
+// If data not passed -> show posts
+} else {
+    $id = htmlentities($_REQUEST["id"]);
+    $posts = $access->selectPosts($id);
+    if (!empty($posts)) {
+        $returnArray["posts"] = $posts;
+    }
 }
 
 // STEP 3. Close connection
 $access->disconnect();
 
 // STEP 4. Feedback info
-echo  json_encode($returnArray);
+echo json_encode($returnArray);
 
 ?>
