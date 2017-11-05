@@ -9,21 +9,20 @@
 import UIKit
 
 class PostCell: UITableViewCell {
-    @IBOutlet var userNameLbl: UILabel!
+    @IBOutlet var usernameLbl: UILabel!
     @IBOutlet var textLbl: UILabel!
     @IBOutlet var dateLbl: UILabel!
     @IBOutlet var pictureImg: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        userNameLbl.textColor = colorBrandBlue
+        usernameLbl.textColor = colorBrandBlue
         
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
 
 }

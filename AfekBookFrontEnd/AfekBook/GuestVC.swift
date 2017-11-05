@@ -1,70 +1,99 @@
 //
-//  HomeVC.swift
+//  GuestVC.swift
 //  AfekBook
 //
-//  Created by Ophir Karako on 04/11/2017.
+//  Created by Ran Endelman on 05/11/2017.
 //  Copyright © 2017 Ran Endelman. All rights reserved.
 //
 
 import UIKit
 
-class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate, UITableViewDelegate, UITableViewDataSource {
+class GuestVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    // variable that stores guest information passed via segue
+    var guest = NSDictionary()
+
+
+    // UI obj
     @IBOutlet var avaImg: UIImageView!
     @IBOutlet var usernameLbl: UILabel!
     @IBOutlet var fullnameLbl: UILabel!
     @IBOutlet var emailLbl: UILabel!
+
+
+    // UI obj related to Posts
     @IBOutlet var tableView: UITableView!
-
-
-    var posts = [AnyObject]()
+    var tweets = [AnyObject]()
     var images = [UIImage]()
 
-    override func viewDidLoad() {
 
+    // first load
+    override func viewDidLoad() {
         super.viewDidLoad()
 
         // get user details from user global var
         // shortcuts to store inf
-        let username = (user!["username"] as AnyObject).uppercased
-        let fullname = user!["fullname"] as? String
-        let email = user!["email"] as? String
-        let ava = user!["ava"] as? String
+        let username = guest["username"] as? String
+        let fullname = guest["fullname"] as? String
+        let email = guest["email"] as? String
+        let ava = guest["ava"] as? String
 
         // assign values to labels
         usernameLbl.text = username
         fullnameLbl.text = fullname
         emailLbl.text = email
-        tableView.contentInset = UIEdgeInsetsMake(2, 0, 0, 0)
-        // Do any additional setup after loading the view.
-//        posts = ["posts", "posts", "posts", "posts"]
+
+
+        // get user profile picture
+        if ava != "" {
+
+            // url path to image
+            let imageURL = URL(string: ava!)!
+
+            // communicate back user as main queue
+            DispatchQueue.main.async(execute: {
+
+                // get data from image url
+                let imageData = try? Data(contentsOf: imageURL)
+
+                // if data is not nill assign it to ava.Img
+                if imageData != nil {
+                    DispatchQueue.main.async(execute: {
+                        self.avaImg.image = UIImage(data: imageData!)
+                    })
+                }
+            })
+
+        }
+
+        // round corners
+        avaImg.layer.cornerRadius = avaImg.bounds.width / 20
+        avaImg.clipsToBounds = true
+
+        self.navigationItem.title = username?.uppercased()
+
     }
 
-    @IBAction func edit_click(_ sender: Any) {
-    }
 
 
-    @IBAction func logout_click(_ sender: Any) {
-
-        // remove saved information
-        UserDefaults.standard.removeObject(forKey: "parseJSON")
-        UserDefaults.standard.synchronize()
-
-        // go to login page
-        let loginVC = self.storyboard?.instantiateViewController(withIdentifier: "LoginVC") as! LoginVC
-        self.present(loginVC, animated: true, completion: nil)
-    }
-
+    // TABLEVIEW
+    // cell numb
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return posts.count
+        return tweets.count
     }
 
+
+    // cell config
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! PostCell
-        let post = posts[indexPath.row]
-        let username = post["username"] as? String
-        let text = post["text"] as? String
-        let date = post["date"] as! String
+
+        // shortcuts
+        let tweet = tweets[indexPath.row]
+        let image = images[indexPath.row]
+        let username = tweet["username"] as? String
+        let text = tweet["text"] as? String
+        let date = tweet["date"] as! String
 
         // converting date string to date
         let dateFormater = DateFormatter()
@@ -74,7 +103,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         // declare settings
         let from = newDate
         let now = Date()
-        let components: NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfMonth]
+        let components : NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfMonth]
         let difference = (Calendar.current as NSCalendar).components(components, from: from, to: now, options: [])
 
         // calculate date
@@ -96,26 +125,45 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         if difference.weekOfMonth! > 0 {
             cell.dateLbl.text = "\(difference.weekOfMonth)".digits + "w."
         }
+
+
+        // assigning shortcuts to ui obj
         cell.usernameLbl.text = username
         cell.textLbl.text = text
-        DispatchQueue.main.async(execute: {
-            cell.textLbl.sizeToFit()
-        })
+        cell.pictureImg.image = image
 
-        cell.pictureImg.image = UIImage(named: "ava.jpg")
+
+        // get main queue to this block of code to communicate back
+        DispatchQueue.main.async {
+
+            // if no image on the cell
+            if image.size.width == 0 && image.size.height == 0 {
+                // move left textLabel if no picture
+                cell.textLbl.frame.origin.x = self.view.frame.size.width / 16 // 20
+                cell.textLbl.frame.size.width = self.view.frame.size.width - self.view.frame.size.width / 8 // 40
+                cell.textLbl.sizeToFit()
+            }
+        }
+
         return cell
+
     }
 
+
+    // pre load func
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // call func of loading posts
+
+        // call func of laoding posts
         loadPosts()
     }
 
+
+    // func of loading posts from server
     func loadPosts() {
 
         // shortcut to id
-        let id = user!["id"] as! String
+        let id = guest["id"]!
 
         // accessing php file via url path
         let url = URL(string: "http://localhost/AfekBook/AfekBookBackEnd/posts.php")!
@@ -145,7 +193,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                         let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
 
                         // clean up
-                        self.posts.removeAll(keepingCapacity: false)
+                        self.tweets.removeAll(keepingCapacity: false)
                         self.images.removeAll(keepingCapacity: false)
                         self.tableView.reloadData()
 
@@ -154,18 +202,23 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                             print("Error while parsing")
                             return
                         }
+
                         // declare new posts to store parseJSON
-                        guard let userPosts = parseJSON["posts"] as? [AnyObject] else {
+                        guard let posts = parseJSON["posts"] as? [AnyObject] else {
                             print("Error while parseJSON")
                             return
                         }
-                        // append all posts var's inf to posts
-                        self.posts = userPosts
-                        // getting images from url paths
-                        for i in 0..<self.posts.count {
 
-                            // path we are getting from $returnArray that assigned to parseJSON > to posts > posts
-                            let path = self.posts[i]["path"] as? String
+
+                        // append all posts var's inf to tweets
+                        self.tweets = posts
+
+
+                        // getting images from url paths
+                        for i in 0 ..< self.tweets.count {
+
+                            // path we are getting from $returnArray that assigned to parseJSON > to posts > tweets
+                            let path = self.tweets[i]["path"] as? String
 
                             // if we found path
                             if !path!.isEmpty {
@@ -179,80 +232,12 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                             }
 
                         }
+
+
                         // reload tableView to show back information
                         self.tableView.reloadData()
 
 
-                    } catch {
-                    }
-
-                } else {
-                }
-
-            })
-
-        }.resume()
-    }
-
-//  Allow edit cell
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            deletePost(indexPath)
-        }
-    }
-
-    func deletePost(_ indexPath: IndexPath) {
-
-        // shortcuts
-        let post = posts[indexPath.row]
-        let uuid = post["uuid"] as! String
-        let path = post["path"] as! String
-
-        let url = URL(string: "http://localhost/AfekBook/AfekBookBackEnd/posts.php")! // access php file
-        var request = URLRequest(url: url) // declare request to proceed url
-        request.httpMethod = "POST" // declare method of passing inf to php
-        let body = "uuid=\(uuid)&path=\(path)" // body - here we are passing info
-        request.httpBody = body.data(using: String.Encoding.utf8) // supports all lang
-
-        // launc php request
-        URLSession.shared.dataTask(with: request) { data, response, error in
-
-            // get main queue to this block of code to communicate back, in other case it will do all this in background
-            DispatchQueue.main.async(execute: {
-
-                if error == nil {
-
-                    do {
-
-                        // get back from server $returnArray of php file
-                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
-
-                        // secure way to declare new var to store (e.g. json) data
-                        guard let parseJSON = json else {
-                            print("Error while parsing")
-                            return
-                        }
-
-                        // we are getting content of $returnArray under value "result" -> $returnArray["result"]
-                        let result = parseJSON["result"]
-                        // if result exists - deleted successfulyy
-                        if result != nil {
-                            self.posts.remove(at: indexPath.row) // remove related content from array
-                            self.images.remove(at: indexPath.row) // remove related picture
-                            self.tableView.deleteRows(at: [indexPath], with: .automatic) // remove table cell
-                            self.tableView.reloadData() // reload table to show updates
-                        } else {
-                            // get main queue to communicate back to user
-                            DispatchQueue.main.async(execute: {
-                                let message = parseJSON["message"] as! String
-                                appDelegate.infoView(message: message, color: colorSmoothRed)
-                            })
-                            return
-                        }
                     } catch {
                         // get main queue to communicate back to user
                         DispatchQueue.main.async(execute: {
@@ -261,6 +246,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
                         })
                         return
                     }
+
                 } else {
                     // get main queue to communicate back to user
                     DispatchQueue.main.async(execute: {
@@ -274,10 +260,3 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
     }
 }
 
-extension String {
-
-    var digits: String {
-        return components(separatedBy: CharacterSet.decimalDigits.inverted)
-                .joined()
-    }
-}

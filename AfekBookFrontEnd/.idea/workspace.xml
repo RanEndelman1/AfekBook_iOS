@@ -12,11 +12,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6s_Plus_11.0_x86_64_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PostVC.swift" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PostVC.swift" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/AfekBook/PostVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
-              <caret line="161" column="31" lean-forward="false" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="73" />
+            <state relative-caret-position="722">
+              <caret line="226" column="0" lean-forward="true" selection-start-line="222" selection-start-column="13" selection-end-line="226" selection-end-column="0" />
               <folding>
                 <marker date="1509885466000" expanded="true" signature="2822:3230" ph="..." />
               </folding>
@@ -28,20 +28,18 @@
         <entry file="file://$PROJECT_DIR$/AfekBook/UsersCell.swift">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="570">
-              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UsersVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UsersVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AfekBook/UsersVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="139">
-              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-              <folding>
-                <element signature="e#7036#7906#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="299">
+              <caret line="203" column="51" lean-forward="true" selection-start-line="203" selection-start-column="51" selection-end-line="203" selection-end-column="51" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -49,8 +47,8 @@
       <file leaf-file-name="PostCell.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AfekBook/PostCell.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
+            <state relative-caret-position="304">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
               <folding />
             </state>
           </provider>
@@ -59,7 +57,7 @@
       <file leaf-file-name="LoginVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AfekBook/LoginVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
+            <state relative-caret-position="433">
               <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="77" />
               <folding />
             </state>
@@ -79,34 +77,31 @@
       <file leaf-file-name="HomeVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AfekBook/HomeVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="162" column="30" lean-forward="false" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="30" />
+            <state relative-caret-position="247">
+              <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
               <folding>
                 <element signature="e#3717#3868#0" expanded="false" />
                 <element signature="e#7534#10848#0" expanded="false" />
-                <element signature="e#10852#11006#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppDelegate.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AfekBook/AppDelegate.swift">
+      <file leaf-file-name="Main.storyboard" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AfekBook/Base.lproj/Main.storyboard">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="739">
-              <caret line="149" column="50" lean-forward="false" selection-start-line="149" selection-start-column="50" selection-end-line="149" selection-end-column="50" />
-              <folding>
-                <element signature="e#3488#5719#0" expanded="false" />
-              </folding>
+            <state relative-caret-position="253">
+              <caret line="349" column="69" lean-forward="true" selection-start-line="349" selection-start-column="69" selection-end-line="349" selection-end-column="69" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavVC.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AfekBook/NavVC.swift">
+      <file leaf-file-name="GuestVC.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AfekBook/GuestVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="44" lean-forward="false" selection-start-line="22" selection-start-column="44" selection-end-line="22" selection-end-column="44" />
+            <state relative-caret-position="244">
+              <caret line="88" column="87" lean-forward="false" selection-start-line="88" selection-start-column="87" selection-end-line="88" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -126,14 +121,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>http://localhost/</find>
-      <find>posts</find>
-      <find>uploadPost</find>
-      <find>pictureImg</find>
-      <find>let text</find>
-      <find>as</find>
-      <find>?</find>
-      <find>IMage</find>
       <find>file</find>
       <find>countLbl</find>
       <find>round</find>
@@ -141,7 +128,6 @@
       <find>viewwill</find>
       <find>postsposts</find>
       <find>tweets</find>
-      <find>.php</find>
       <find>JUST</find>
       <find>reload</find>
       <find>tweet</find>
@@ -156,6 +142,15 @@
       <find>once</find>
       <find>searchbar</find>
       <find>let word =</find>
+      <find>edit</find>
+      <find>usernameLbl</find>
+      <find>let cell =</find>
+      <find>postCe</find>
+      <find>userNameLbl</find>
+      <find>let back</find>
+      <find>let word =</find>
+      <find>.php</find>
+      <find>?</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,12 +165,13 @@
         <option value="$PROJECT_DIR$/AfekBook/LoginVC.swift" />
         <option value="$PROJECT_DIR$/AfekBook/RegisterVC.swift" />
         <option value="$PROJECT_DIR$/AfekBook/TabBarVC.swift" />
-        <option value="$PROJECT_DIR$/AfekBook/PostCell.swift" />
         <option value="$PROJECT_DIR$/AfekBook/AppDelegate.swift" />
-        <option value="$PROJECT_DIR$/AfekBook/HomeVC.swift" />
         <option value="$PROJECT_DIR$/AfekBook/PostVC.swift" />
         <option value="$PROJECT_DIR$/AfekBook/UsersCell.swift" />
         <option value="$PROJECT_DIR$/AfekBook/UsersVC.swift" />
+        <option value="$PROJECT_DIR$/AfekBook/HomeVC.swift" />
+        <option value="$PROJECT_DIR$/AfekBook/GuestVC.swift" />
+        <option value="$PROJECT_DIR$/AfekBook/PostCell.swift" />
       </list>
     </option>
   </component>
@@ -273,12 +269,12 @@
       <workItem from="1508052458372" duration="1406000" />
       <workItem from="1509100237094" duration="14683000" />
       <workItem from="1509718789026" duration="12526000" />
-      <workItem from="1509874431218" duration="11169000" />
+      <workItem from="1509874431218" duration="14770000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67138000" />
+    <option name="totallyTimeSpent" value="70739000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -289,7 +285,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23786408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23786408" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08645833" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -355,7 +351,6 @@
           <folding>
             <element signature="e#3717#3868#0" expanded="false" />
             <element signature="e#7534#10848#0" expanded="false" />
-            <element signature="e#10852#11006#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -504,22 +499,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AfekBook/LoginVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AfekBook/PostCell.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/AfekBook/TabBarVC.swift">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="247">
@@ -536,42 +515,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/UsersCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="5" lean-forward="false" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/GuestVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="88" column="87" lean-forward="false" selection-start-line="88" selection-start-column="87" selection-end-line="88" selection-end-column="87" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AfekBook/HomeVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="162" column="30" lean-forward="false" selection-start-line="162" selection-start-column="24" selection-end-line="162" selection-end-column="30" />
+        <state relative-caret-position="247">
+          <caret line="13" column="18" lean-forward="false" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
           <folding>
             <element signature="e#3717#3868#0" expanded="false" />
             <element signature="e#7534#10848#0" expanded="false" />
-            <element signature="e#10852#11006#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/AfekBook/UsersCell.swift">
+    <entry file="file://$PROJECT_DIR$/AfekBook/Base.lproj/Main.storyboard">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+        <state relative-caret-position="253">
+          <caret line="349" column="69" lean-forward="true" selection-start-line="349" selection-start-column="69" selection-end-line="349" selection-end-column="69" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/PostCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="304">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/UsersVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="203" column="51" lean-forward="true" selection-start-line="203" selection-start-column="51" selection-end-line="203" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/LoginVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="77" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AfekBook/PostVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="161" column="31" lean-forward="false" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="73" />
+        <state relative-caret-position="722">
+          <caret line="226" column="0" lean-forward="true" selection-start-line="222" selection-start-column="13" selection-end-line="226" selection-end-column="0" />
           <folding>
             <marker date="1509885466000" expanded="true" signature="2822:3230" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/AfekBook/UsersVC.swift">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding>
-            <element signature="e#7036#7906#0" expanded="false" />
           </folding>
         </state>
       </provider>
