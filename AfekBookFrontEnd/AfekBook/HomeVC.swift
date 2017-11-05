@@ -74,7 +74,7 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         // declare settings
         let from = newDate
         let now = Date()
-        let components : NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfMonth]
+        let components: NSCalendar.Unit = [.second, .minute, .hour, .day, .weekOfMonth]
         let difference = (Calendar.current as NSCalendar).components(components, from: from, to: now, options: [])
 
         // calculate date
@@ -96,11 +96,8 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
         if difference.weekOfMonth! > 0 {
             cell.dateLbl.text = "\(difference.weekOfMonth)".digits + "w."
         }
-        print(cell.dateLbl.text)
         cell.userNameLbl.text = username
         cell.textLbl.text = text
-
-
         DispatchQueue.main.async(execute: {
             cell.textLbl.sizeToFit()
         })
@@ -195,9 +192,86 @@ class HomeVC: UIViewController, UINavigationControllerDelegate, UIImagePickerCon
             })
 
         }.resume()
-
     }
 
+//  Allow edit cell
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            deletePost(indexPath)
+        }
+    }
+
+    func deletePost(_ indexPath: IndexPath) {
+
+        // shortcuts
+        let post = posts[indexPath.row]
+        let uuid = post["uuid"] as! String
+        let path = post["path"] as! String
+
+        let url = URL(string: "http://localhost/AfekBook/AfekBookBackEnd/posts.php")! // access php file
+        var request = URLRequest(url: url) // declare request to proceed url
+        request.httpMethod = "POST" // declare method of passing inf to php
+        let body = "uuid=\(uuid)&path=\(path)" // body - here we are passing info
+        request.httpBody = body.data(using: String.Encoding.utf8) // supports all lang
+
+        // launc php request
+        URLSession.shared.dataTask(with: request) { data, response, error in
+
+            // get main queue to this block of code to communicate back, in other case it will do all this in background
+            DispatchQueue.main.async(execute: {
+
+                if error == nil {
+
+                    do {
+
+                        // get back from server $returnArray of php file
+                        let json = try JSONSerialization.jsonObject(with: data!, options: .mutableContainers) as? NSDictionary
+
+                        // secure way to declare new var to store (e.g. json) data
+                        guard let parseJSON = json else {
+                            print("Error while parsing")
+                            return
+                        }
+
+                        // we are getting content of $returnArray under value "result" -> $returnArray["result"]
+                        let result = parseJSON["result"]
+                        // if result exists - deleted successfulyy
+                        if result != nil {
+                            self.posts.remove(at: indexPath.row) // remove related content from array
+                            self.images.remove(at: indexPath.row) // remove related picture
+                            self.tableView.deleteRows(at: [indexPath], with: .automatic) // remove table cell
+                            self.tableView.reloadData() // reload table to show updates
+                        } else {
+                            // get main queue to communicate back to user
+                            DispatchQueue.main.async(execute: {
+                                let message = parseJSON["message"] as! String
+                                appDelegate.infoView(message: message, color: colorSmoothRed)
+                            })
+                            return
+                        }
+                    } catch {
+                        // get main queue to communicate back to user
+                        DispatchQueue.main.async(execute: {
+                            let message = "\(error)"
+                            appDelegate.infoView(message: message, color: colorSmoothRed)
+                        })
+                        return
+                    }
+                } else {
+                    // get main queue to communicate back to user
+                    DispatchQueue.main.async(execute: {
+                        let message = error!.localizedDescription
+                        appDelegate.infoView(message: message, color: colorSmoothRed)
+                    })
+                    return
+                }
+            })
+        }.resume()
+    }
 }
 
 extension String {

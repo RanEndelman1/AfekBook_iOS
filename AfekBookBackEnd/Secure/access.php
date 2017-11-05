@@ -163,6 +163,31 @@ public function insertPost($id, $uuid, $text, $path) {
     return $result;
 }
 
+// Delete post according to passed uui
+    public function deletePost($uuid) {
+
+        // sql statement to be executed
+        $sql = "DELETE FROM posts WHERE uuid = ?";
+
+        // prepare to be executed after binded params in place of ?
+        $statement = $this->conn->prepare($sql);
+
+        // error occured while preparation or sql statement
+        if (!$statement) {
+            throw new Exception($statement->error);
+        }
+
+        // bind param in place of ? and assign var
+        $statement->bind_param("s", $uuid);
+        $statement->execute();
+
+        // assign numb of affected rows to $returnValue, to see did deleted or not
+        $returnValue = $statement->affected_rows;
+
+        return $returnValue;
+
+    }
+
 public function selectPosts($id) {
     // declare array to store selected information
     $returnArray = array();
