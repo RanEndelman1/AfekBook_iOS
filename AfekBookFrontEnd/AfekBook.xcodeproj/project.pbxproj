@@ -12,6 +12,7 @@
 		038FB5C11FAD59B600634701 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB5C01FAD59B600634701 /* HomeVC.swift */; };
 		038FB5C91FAD6EFF00634701 /* PostVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038FB5C81FAD6EFF00634701 /* PostVC.swift */; };
 		61820B4708EE69EA4C3B5EED /* background.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 61820DEAC8D9515057564681 /* background.jpg */; };
+		9077DCC51FAF14B6006AF096 /* ava.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 9077DCC41FAF14B6006AF096 /* ava.jpg */; };
 		90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A894C71F9211F700C74B10 /* AppDelegate.swift */; };
 		90A894CA1F9211F700C74B10 /* RegisterVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90A894C91F9211F700C74B10 /* RegisterVC.swift */; };
 		90A894CD1F9211F700C74B10 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A894CB1F9211F700C74B10 /* Main.storyboard */; };
@@ -19,6 +20,11 @@
 		90A894D21F9211F700C74B10 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90A894D01F9211F700C74B10 /* LaunchScreen.storyboard */; };
 		90F404CD1FAD2F7B008ACF2A /* rsz_1human.png in Resources */ = {isa = PBXBuildFile; fileRef = 90F404CC1FAD2F7B008ACF2A /* rsz_1human.png */; };
 		90F404D11FAD31F8008ACF2A /* NavVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F404D01FAD31F8008ACF2A /* NavVC.swift */; };
+		90F404D21FAE3F33008ACF2A /* post@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038FB5C51FAD615600634701 /* post@2x.png */; };
+		90F404D31FAE3F3A008ACF2A /* post@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038FB5C41FAD615600634701 /* post@3x.png */; };
+		90F404D41FAE3F3D008ACF2A /* post.png in Resources */ = {isa = PBXBuildFile; fileRef = 038FB5C31FAD610700634701 /* post.png */; };
+		90F404D51FAE3F42008ACF2A /* logout.png in Resources */ = {isa = PBXBuildFile; fileRef = 038FB5C21FAD5E5200634701 /* logout.png */; };
+		90F404D71FAE4F3F008ACF2A /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F404D61FAE4F3F008ACF2A /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +37,7 @@
 		038FB5C51FAD615600634701 /* post@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "post@2x.png"; sourceTree = "<group>"; };
 		038FB5C81FAD6EFF00634701 /* PostVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostVC.swift; sourceTree = "<group>"; };
 		61820DEAC8D9515057564681 /* background.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = background.jpg; sourceTree = "<group>"; };
+		9077DCC41FAF14B6006AF096 /* ava.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = ava.jpg; path = "../../../../../../../../Users/ranendelman/Downloads/Full Project 2/Twitter Swift 3/Twitter/ava.jpg"; sourceTree = "<group>"; };
 		90A894C41F9211F700C74B10 /* AfekBook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AfekBook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90A894C71F9211F700C74B10 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90A894C91F9211F700C74B10 /* RegisterVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterVC.swift; sourceTree = "<group>"; };
@@ -40,6 +47,7 @@
 		90A894D31F9211F700C74B10 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90F404CC1FAD2F7B008ACF2A /* rsz_1human.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rsz_1human.png; sourceTree = "<group>"; };
 		90F404D01FAD31F8008ACF2A /* NavVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavVC.swift; sourceTree = "<group>"; };
+		90F404D61FAE4F3F008ACF2A /* PostCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,7 @@
 		618200936E7EFBDE05B48F73 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				9077DCC41FAF14B6006AF096 /* ava.jpg */,
 				038FB5C51FAD615600634701 /* post@2x.png */,
 				038FB5C41FAD615600634701 /* post@3x.png */,
 				038FB5C31FAD610700634701 /* post.png */,
@@ -96,6 +105,7 @@
 				036BE0241FAD3EE400175F85 /* TabBarVC.swift */,
 				038FB5C01FAD59B600634701 /* HomeVC.swift */,
 				038FB5C81FAD6EFF00634701 /* PostVC.swift */,
+				90F404D61FAE4F3F008ACF2A /* PostCell.swift */,
 				618200936E7EFBDE05B48F73 /* Images */,
 			);
 			path = AfekBook;
@@ -160,11 +170,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9077DCC51FAF14B6006AF096 /* ava.jpg in Resources */,
+				90F404D31FAE3F3A008ACF2A /* post@3x.png in Resources */,
+				90F404D41FAE3F3D008ACF2A /* post.png in Resources */,
+				90F404D21FAE3F33008ACF2A /* post@2x.png in Resources */,
 				90A894D21F9211F700C74B10 /* LaunchScreen.storyboard in Resources */,
 				90A894CF1F9211F700C74B10 /* Assets.xcassets in Resources */,
 				90A894CD1F9211F700C74B10 /* Main.storyboard in Resources */,
 				90F404CD1FAD2F7B008ACF2A /* rsz_1human.png in Resources */,
 				61820B4708EE69EA4C3B5EED /* background.jpg in Resources */,
+				90F404D51FAE3F42008ACF2A /* logout.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +197,7 @@
 				038FB5C91FAD6EFF00634701 /* PostVC.swift in Sources */,
 				90A894C81F9211F700C74B10 /* AppDelegate.swift in Sources */,
 				030DFC481FA8818100109F79 /* LoginVC.swift in Sources */,
+				90F404D71FAE4F3F008ACF2A /* PostCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -163,6 +163,46 @@ public function insertPost($id, $uuid, $text, $path) {
     return $result;
 }
 
+public function selectPosts($id) {
+    // declare array to store selected information
+    $returnArray = array();
+
+    // sql JOIN
+    $sql = "SELECT posts.id,
+		posts.uuid,
+        posts.text,
+        posts.path,
+        posts.date,
+        users.id,
+        users.username,
+        users.fullname,
+        users.email,
+        users.ava
+        FROM AfekBook.posts JOIN AfekBook.users ON
+        posts.id = $id AND users.id = $id ORDER by date DESC";
+
+    // prepare to be executed
+    $statement = $this->conn->prepare($sql);
+
+    // error ocured
+    if (!$statement) {
+        throw new Exception($statement->error);
+    }
+
+    // execute sql
+    $statement->execute();
+
+    // result we got in execution
+    $result = $statement->get_result();
+
+    // each time append to $returnArray new row one by one when it is found
+    while ($row = $result->fetch_assoc()) {
+        $returnArray[] = $row;
+    }
+
+    return $returnArray;
+}
+
 
 }
 
