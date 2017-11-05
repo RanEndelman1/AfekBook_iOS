@@ -12,13 +12,35 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="iphonesimulatoriPhone_6s_Plus_11.0_x86_64_1" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="PostVC.swift" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PostVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AfekBook/PostVC.swift">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="380">
-              <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+            <state relative-caret-position="148">
+              <caret line="161" column="31" lean-forward="false" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="73" />
               <folding>
                 <marker date="1509885466000" expanded="true" signature="2822:3230" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersCell.swift" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/AfekBook/UsersCell.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UsersVC.swift" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/AfekBook/UsersVC.swift">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="139">
+              <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+              <folding>
+                <element signature="e#7036#7906#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -80,16 +102,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="NavVCViewController.swift" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/AfekBook/NavVCViewController.swift">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="22" column="0" lean-forward="false" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="NavVC.swift" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AfekBook/NavVC.swift">
           <provider selected="true" editor-type-id="text-editor">
@@ -114,11 +126,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>http:/</find>
-      <find>.ini</find>
-      <find>ini</find>
-      <find>LoginVC</find>
-      <find>async</find>
       <find>http://localhost/</find>
       <find>posts</find>
       <find>uploadPost</find>
@@ -144,6 +151,11 @@
       <find>twee</find>
       <find>posts.php</find>
       <find>self.pictureImg</find>
+      <find>print(message)</find>
+      <find>viewdid</find>
+      <find>once</find>
+      <find>searchbar</find>
+      <find>let word =</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -162,6 +174,8 @@
         <option value="$PROJECT_DIR$/AfekBook/AppDelegate.swift" />
         <option value="$PROJECT_DIR$/AfekBook/HomeVC.swift" />
         <option value="$PROJECT_DIR$/AfekBook/PostVC.swift" />
+        <option value="$PROJECT_DIR$/AfekBook/UsersCell.swift" />
+        <option value="$PROJECT_DIR$/AfekBook/UsersVC.swift" />
       </list>
     </option>
   </component>
@@ -259,12 +273,12 @@
       <workItem from="1508052458372" duration="1406000" />
       <workItem from="1509100237094" duration="14683000" />
       <workItem from="1509718789026" duration="12526000" />
-      <workItem from="1509874431218" duration="8139000" />
+      <workItem from="1509874431218" duration="11169000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64108000" />
+    <option name="totallyTimeSpent" value="67138000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
@@ -534,12 +548,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/UsersCell.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="5" lean-forward="true" selection-start-line="30" selection-start-column="5" selection-end-line="30" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/AfekBook/PostVC.swift">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="187" column="0" lean-forward="true" selection-start-line="187" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+        <state relative-caret-position="148">
+          <caret line="161" column="31" lean-forward="false" selection-start-line="161" selection-start-column="31" selection-end-line="161" selection-end-column="73" />
           <folding>
             <marker date="1509885466000" expanded="true" signature="2822:3230" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/AfekBook/UsersVC.swift">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="54" column="0" lean-forward="true" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+          <folding>
+            <element signature="e#7036#7906#0" expanded="false" />
           </folding>
         </state>
       </provider>

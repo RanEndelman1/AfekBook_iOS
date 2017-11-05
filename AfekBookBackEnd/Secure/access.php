@@ -170,7 +170,7 @@ public function insertPost($id, $uuid, $text, $path) {
         $sql = "DELETE FROM posts WHERE uuid = ?";
 
         // prepare to be executed after binded params in place of ?
-        $statement = $this->conn->prepare($sql);
+        $statement = mysqli_prepare($this->conn, $sql);
 
         // error occured while preparation or sql statement
         if (!$statement) {
@@ -207,7 +207,7 @@ public function selectPosts($id) {
         posts.id = $id AND users.id = $id ORDER by date DESC";
 
     // prepare to be executed
-    $statement = $this->conn->prepare($sql);
+    $statement = mysqli_prepare($this->conn, $sql);
 
     // error ocured
     if (!$statement) {
@@ -227,6 +227,52 @@ public function selectPosts($id) {
 
     return $returnArray;
 }
+
+// Search / Select user
+    public function selectUsers($word, $username) {
+
+        // var to store all returned inf from db
+        $returnArray = array();
+
+        // sql statement to be executed if not entered word
+        $sql = "SELECT id, username, email, fullname, ava FROM users WHERE NOT username = '".$username."'";
+
+        // if word entered alter sql statement for wider search
+        if (!empty($word)) {
+            $sql .= " AND ( username LIKE ? OR fullname LIKE ? )";
+        }
+
+        // prepare to be executed as soon as vars are binded
+        $statement = mysqli_prepare($this->conn, $sql);
+
+        // error occured
+        if (!$statement) {
+            throw new Exception($statement->error);
+        }
+
+        // if word entered bind params
+        if (!empty($word)) {
+            $word = '%' . $word . '%'; // %bob%
+            $statement->bind_param("ss", $word, $word);
+        }
+
+        // execute statement
+        $statement->execute();
+
+        // assign returned results to $result var
+        $result = $statement->get_result();
+
+        // every time when we convert $result to assoc array append to $row
+        while ($row = $result->fetch_assoc()) {
+
+            // store all append $rows in $returnArray
+            $returnArray[] = $row;
+        }
+
+        // feedback result
+        return $returnArray;
+
+    }
 
 
 }
