@@ -198,21 +198,20 @@ class UsersVC: UITableViewController, UISearchBarDelegate {
             // define index to later on pass exact guest user related inf
             let index = tableView.indexPath(for: cell)!.row
 
-            // if segue is guest ...
-//            if segue.identifier == "guest" {
-//
-//                // call guestvc to access guest var
-//                let guestvc = segue.destination as! GuestVC
-//
-//                // assign guest user inf to guest var
-//                guestvc.guest = users[index] as! NSDictionary
-//
-//                // new back button
-//                let backItem = UIBarButtonItem()
-//                backItem.title = ""
-//                navigationItem.backBarButtonItem = backItem
-//
-//            }
+//            if segue is guest ...
+            if segue.identifier == "guest" {
+
+                // call guestvc to access guest var
+                let guestvc = segue.destination as! GuestVC
+
+                // assign guest user inf to guest var
+                guestvc.guest = users[index] as! NSDictionary
+
+                // new back button
+                let backItem = UIBarButtonItem()
+                backItem.title = ""
+                navigationItem.backBarButtonItem = backItem
+            }
 
         }
 
